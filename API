@@ -1,0 +1,300 @@
+#include <cstdlib>
+#include <iostream>
+
+int main(int argc, char *argv[]){
+    using namespace std;    
+    int pr[3][3];
+    string fest[3]={"Meo SW", "SBock SRock", "Marés Vivas"};
+    string tb[3]={"Bilhete Diário", "Bilhete 3 Dias", "Bilhete VIP"}; 
+    int op=0, l, c, x, y, r, f, t, w, p,a,b,d,e;
+    float sum1, sum, mediaf, media, min, max;
+    for(l=0; l<3; l++){
+      		  for(c=0; c<3; c++)
+             pr[l][c]=0;
+             }
+    while(op!=9){
+cout<<"1-Preencher Propostas"<<endl;cout<<"2-Estatísticas Bilhetes"<<endl;cout<<"3-Estatísticas Festival"<<endl;cout<<"4-Visualizar Resultados"<<endl;cout<<"9-Sair"<<endl;cout<<"Introduza o número correspondente à ação que pretende efetuar"<<endl;cin>>op;
+    	switch(op){
+                 case 1:{
+                  
+                 	cout<<"1-Por Bilhete"<<endl;
+                 	cout<<"2-Por Festival"<<endl;
+                 	cout<<"3-Festival/Bilhete"<<endl;
+                 	cout<<"9-Voltar atrás"<<endl;
+                 	cout<<"Introduza o número correspondente à ação que pretende efetuar"<<endl;
+                 	cin>>x; system("cls");
+                      switch(x){
+                      	case 1:{
+                           cout<<"1- "<<tb[0]<<endl;
+                           cout<<"2- "<<tb[1]<<endl;
+                           cout<<"3- "<<tb[2]<<endl;
+                           cout<<"9-Menu Inicial"<<endl;
+                           cout<<"Introduza o número correspondente à ação que pretende efetuar"<<endl;
+                           cin>>y; system("cls");
+                           	switch(y){
+                                     case 1:{
+                                             for(l=0; l<3; l++){
+    										 cout<<"Introduza o valor do "<<tb[0]<<" do Festival "<<fest[l]<<endl;
+    										 cin>>pr[l][0];
+											  while((pr[l][0])<0){
+    										  cout<<"O valor que introduziu não é válido"<<endl<<"Introduza o valor do "<<tb[0]<<" do Festival "<<fest[l]<<endl;
+    										  cin>>pr[l][0];
+											 }} system("cls"); break;}
+                                     case 2:{
+                                             for(l=0; l<3; l++){
+    										 cout<<"Introduza o valor do "<<tb[1]<<" do Festival "<<fest[l]<<endl;
+    										 cin>>pr[l][1];
+											  while((pr[l][1])<0){
+    										  cout<<"O valor que introduziu não é válido"<<endl<<"Introduza o valor do "<<tb[1]<<" do Festival "<<fest[l]<<endl;
+    										  cin>>pr[l][1];
+											 }} system("cls"); break;}
+                                     case 3:{
+                                             for(l=0; l<3; l++){
+    										 cout<<"Introduza o valor do "<<tb[2]<<" do Festival "<<fest[l]<<endl;
+    										 cin>>pr[l][2];
+											  while((pr[l][2])<0){
+    										  cout<<"O valor que introduziu não é válido"<<endl<<"Introduza o valor do "<<tb[2]<<" do Festival "<<fest[l]<<endl;
+    										  cin>>pr[l][2];
+											 }} system("cls"); break;}
+                                     case 9:{ break;}
+                                     default:{system("cls"); cout<<"A opção selecionada não é válida"<<endl<<endl;}
+                                     } break;}
+	                      case 2:{
+	                      	   cout<<"1- "<<fest[0]<<endl;
+	                           cout<<"2- "<<fest[1]<<endl;
+	                           cout<<"3- "<<fest[2]<<endl;
+	                           cout<<"9-Menu Inicial"<<endl;
+	                           cout<<"Introduza o número correspondente à ação que pretende efetuar"<<endl;
+	                           cin>>y; system("cls");
+	                           	switch(y){
+						  				 case 1:{
+	                                             for(c=0; c<3; c++){
+	    										 cout<<"Introduza o valor do "<<tb[c]<<" do Festival "<<fest[0]<<endl;
+	    										 cin>>pr[0][c];} system("cls"); break;}
+	                                     case 2:{
+	                                             for(c=0; c<3; c++){
+	                                             cout<<"Introduza o valor do "<<tb[c]<<" do Festival "<<fest[1]<<endl;
+	                                             cin>>pr[1][c];}break;}
+	                                     case 3:{
+	                                             for(c=0; c<3; c++){
+	                                             cout<<"Introduza o valor do "<<tb[c]<<" do Festival "<<fest[2]<<endl;
+	                                             cin>>pr[2][c];}break;}
+	                                     case 9:{ break;}
+	                                     default:{system("cls"); cout<<"A opção selecionada não é válida"<<endl<<endl;}
+							}break;}
+	                	case 3:{
+	                      		cout<<"Escolha um festival"<<endl;
+	                    		cout<<"1-"<<fest[0]<<endl;
+						    	cout<<"2-"<<fest[1]<<endl;
+						    	cout<<"3-"<<fest[2]<<endl;
+								cout<<"Introduza o número correspondente à ação que pretende efetuar"<<endl;
+								cin>>f;
+								system("cls");
+								cout<<"Escolha o tipo de bilhete"<<endl;
+								cout<<"1-"<<tb[0]<<endl;
+							    cout<<"2-"<<tb[1]<<endl;
+							    cout<<"3-"<<tb[2]<<endl;
+								cout<<"Introduza o número correspondente à ação que pretende efetuar"<<endl;
+								cin>>t;
+								system("cls");
+								cout<<"Introduza o valor do "<<tb[t-1]<<" do Festival "<<fest[f-1]<<endl;
+								cin>>pr[f-1][t-1];
+								system("cls");
+								break;}
+		                case 9:{system("cls"); break;}
+		                      default:{system("cls"); cout<<"A opção selecionada não é válida"<<endl<<endl;}
+		                      }break;}
+                 case 2:{
+						 system("cls");
+						 cout<<"1-Média de 1 bilhete"<<endl;
+		                 cout<<"2-Média de todos os bilhetes"<<endl;
+		                 cout<<"3-Bilhete mais barato/Bilhete mais caro"<<endl;
+		                 cout<<"4-Bilhetes sem preço atribuído"<<endl;
+		                 cout<<"Introduza o número correspondente à ação que pretende efetuar"<<endl;
+		                 cin>>y;
+					switch(y){
+						case 1:{
+								 system("cls");
+								 cout<<"1-"<<tb[0]<<endl;
+				                 cout<<"2-"<<tb[1]<<endl;
+				                 cout<<"3-"<<tb[2]<<endl;
+				                 cout<<"Introduza o número correspondente à ação que pretende efetuar"<<endl;
+				                 cin>>w;
+	                                              switch(w){
+	                                              	case 1:{
+														sum=0; sum1=0;
+	                                              		for(l=0; l<3; l++){
+	                                              			if((pr[l][0])>0){
+															  sum=sum+pr[l][0];
+															  sum1=sum1+1;
+															  }
+														  }
+														  cout<<"O valor da média dos bilhetes diários é: "<<(sum/sum1)<<endl<<endl;
+	                                              		break;}
+													 case 2:{
+	                                              		sum=0; sum1=0;
+	                                              		for(l=0; l<3; l++){
+	                                              			if((pr[l][1])>0){
+															  sum=sum+pr[l][1];
+															  sum1=sum1+1;
+															  }
+														  }
+														  cout<<"O valor da média dos bilhetes de 3 dias é: "<<(sum/sum1)<<endl<<endl;
+	                                              		break;}
+													 case 3:{
+													 	sum=0; sum1=0;
+	                                              		for(l=0; l<3; l++){
+	                                              			if((pr[l][2])>0){
+															  sum=sum+pr[l][2];
+															  sum1=sum1+1;
+															  }
+														  }
+														  cout<<"O valor da média dos bilhetes VIP é: "<<(sum/sum1)<<endl<<endl;
+	                                              		break;}
+														  }break;}
+	                    case 2:{
+	                                     		 sum=0; sum1=0;
+	                                             for(l=0; l<3; l++){
+									             for(c=0; c<3; c++){
+												 if((pr[l][c])!=0) {sum=sum+pr[l][c]; sum1=sum1+1;}}}
+												 cout<<"A média de todos os bilhetes é: "<<sum/sum1<<endl<<endl; break;}
+	                    case 3:{
+	                                            min=1000000;
+	                                            max=pr[0][0];
+												for(l=0; l<3; l++){
+													for(c=0; c<3; c++){
+														if((pr[l][c])>0){
+															if((pr[l][c])<=min){min=pr[l][c]; a=l; b=c;
+															}
+														
+															if((pr[l][c])>=max){max=pr[l][c]; d=l; e=c;
+															}
+														}
+													}
+												}
+												cout<<"O valor máximo de um bilhete é "<<max<<" euros, do tipo "<<tb[e]<<endl<<"O valor minimo de um bilhete é "<<min<<" euros, do tipo "<<tb[b]<<endl<<endl;
+												break;}
+	                    case 4:{
+	                                             for(l=0; l<3; l++){
+									             cout<<endl;
+									             for(c=0; c<3; c++){
+									             if (pr[l][c]==0){
+									            	system("cls");
+					                              cout<<"Não introduziu o valor de todos os bilhetes"<<endl<<"Introduza o valor do "<<tb[c]<<" do Festival "<<fest[l]<<endl;
+					                              cin>>pr[l][c];
+					                              }}}system("cls"); cout<<"não tem mais bilhetes por introduzir"<<endl<<endl; break;}
+	                    case 9:{ break;}
+	                    default:{system("cls"); cout<<"A opção selecionada não é válida"<<endl<<endl;} }break;}
+                 case 3:{
+                 		system("cls");
+						 cout<<"1-Média de 1 festival"<<endl;
+		                 cout<<"2-Média de todos os festivais"<<endl;
+		                 cout<<"3-Festival mais barato/Festival mais caro"<<endl;
+		                 cout<<"4-Festivais sem preço atribuído"<<endl;
+		                 cout<<"9-Voltar atrás"<<endl;
+		                 cout<<"Introduza o número correspondente à ação que pretende efetuar"<<endl;
+		                 cin>>r;
+                 		switch(r){
+						 	case 1:{
+							 system("cls");
+							 cout<<"1-"<<fest[0]<<endl;
+			                 cout<<"2-"<<fest[1]<<endl;
+			                 cout<<"3-"<<fest[2]<<endl;
+			                 cout<<"Introduza o número correspondente à ação que pretende efetuar"<<endl;
+			                 cin>>w;
+	                                              switch(w){
+	                                              	case 1:{
+													  	sum=0; sum1=0;
+	                                              		for(c=0; c<4; c++){
+	                                              			if(pr[0][c]!=0){
+    										 				sum=sum+pr[0][c];
+    										 				sum1=sum1+1;
+														  }} cout<<"O valor da média do "<<fest[0]<<" é igual a: "<<sum/sum1<<endl<<endl;break;}
+													 
+													 case 2:{
+													 	sum=0; sum1=0;
+	                                              		for(c=0; c<4; c++){
+    										 				sum=sum+pr[1][c];
+    										 				sum1=sum1+1;
+														  } cout<<"O valor da média do "<<fest[1]<<" é igual a: "<<sum/sum1<<endl<<endl;break;}
+													 
+													 case 3:{
+													 	sum=0; sum1=0;
+													 	for(c=0; c<4; c++){
+    										 				sum=sum+pr[2][c];
+    										 				sum1=sum1+1;
+														  } cout<<"O valor da média do "<<fest[2]<<" é igual a: "<<sum/sum1<<endl<<endl;break;}
+														
+													 }break;}
+	                                       case 2:{
+	                                     		 sum=0; sum1=0; mediaf=0;
+	                                             for(l=0; l<3; l++){
+									             for(c=0; c<3; c++){
+												 if((pr[l][c])!=0) {sum=sum+pr[l][c]; sum1=sum1+1;}
+												 }}
+												 cout<<"A média de todos os festivais é: "<<sum/sum1<<endl<<endl; break;}
+	                                     case 3:{
+												 sum=0; sum1=0; max=0; min=0; media=0;
+	                                             	for(c=0; c<3; c++){
+	                                             		if((pr[0][c]) != 0){
+	                                             			sum=sum+pr[0][c];
+	                                             			sum1=sum1+1;
+														 }
+													}
+	                                            min=sum/sum1;
+	                                            max=sum/sum1;
+	                                            sum=0; sum1=0;
+												for(l=1; l<3; l++){
+													for(c=0; c<3; c++){
+	                                             		if((pr[l][c]) >0 ){
+	                                             			sum=sum+pr[l][c];
+	                                             			sum1=sum1+1;
+	                                             			media=sum/sum1;
+														 }
+													}
+													if(media<min){min=media; a=l;
+													}
+													if(media>max){max=media; b=l;
+													}
+													sum=0; sum1=0;
+												}
+												cout<<"O festival mais caro é "<<fest[b]<<", com os bilhetes a terem um preço com uma média de "<<max<<" euros"<<endl<<"O festival mais barato é "<<fest[a]<<", com os bilhetes a terem um preço com uma média de "<<min<<" euros"<<endl<<endl;
+												break;}
+	                                     case 4:{
+	                                             for(l=0; l<3; l++){
+									             cout<<endl;
+									             for(c=0; c<3; c++){
+									             if (pr[l][c]==0){
+									            	system("cls");
+					                              cout<<"Não introduziu o valor de todos os bilhetes"<<endl<<"Introduza o valor do "<<tb[c]<<" do Festival "<<fest[l]<<endl;
+					                              cin>>pr[l][c];
+					                              }}}break;}
+	                                     case 9:{ break;}
+	                                     default:{system("cls"); cout<<"A opção selecionada não é válida"<<endl<<endl;}}break;}
+                 case 4:{
+             		system("cls");
+             		cout<<endl<<"            B_D | B_3d | B_VIP | B_acp";
+             		for(l=0; l<3; l++){
+             		cout<<endl;
+             		for(c=0; c<3; c++){
+                      if(c==0){
+                               if(l==0)
+                               cout<<fest[l]<<"-      ";
+                               else{if(l==3) cout<<fest[l]<<"-   ";
+                                    else cout<<fest[l]<<"- ";
+                                    }}
+                      if(pr[l][c]<10)
+                      cout<<"0"<<pr[l][c]<<"     ";
+                      else{
+                           if(pr[l][c]>99)
+                           cout<<pr[l][c]<<"    ";
+                           else cout<<pr[l][c]<<"     ";
+                      }}}
+                      cout<<endl<<endl;
+                      break;}
+                 case 9:{system("cls"); break;}
+                 default:{system("cls"); cout<<"A opção selecionada não é válida"<<endl<<endl;}
+                      }}
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}
